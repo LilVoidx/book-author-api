@@ -9,6 +9,15 @@ export class Author {
   @Column()
   name: string;
 
+  @Column({ type: 'text', nullable: true })
+  bio: string;
+
+  @Column({ type: 'date', nullable: true })
+  birthDate: Date;
+
+  @Column({ nullable: true })
+  nationality: string;
+
   @OneToMany(() => Book, (book) => book.author)
   books: Book[];
 }
